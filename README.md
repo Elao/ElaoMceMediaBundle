@@ -26,14 +26,36 @@ Configuration disponible au niveau du champ:
 
 # Authenticator pour imagemanager et filemanager
 
-Pour commencer, on doit modifier le fichier /tinymce/plugins/imagemanger/config.php
+Pour commencer, on doit modifier le fichier /tinymce/plugins/imagemanger/config.php ou /tinymce/plugins/filemanger/config.php
 
-On doit modifier la ligne qui contient `$mcFileManagerConfig['authenticator']` ou `$mcImageManagerConfig['authenticator']` et indiquer que l'on veut utiliser le SessionAuthenticator
+    'authenticator.login_page' = /_tinymce/login
+    'authenticator` = 'SessionAuthenticator'
+    'SessionAuthenticator.logged_in_key' = 'tiny_isLogin'
+    'SessionAuthenticator.user_key' = 'tiny_userKey'
+    'SessionAuthenticator.path_key' = 'tiny_pathKey'
+    'SessionAuthenticator.rootpath_key' = 'tiny_rootpathKey'
+    'SessionAuthenticator.config_prefix' = 'tiny_config'
 
-Ensuite il faut modifier la configuration de cet authenticator avec les valeurs suivantes:
+Todo
 
-- SessionAuthenticator.logged_in_key
-- SessionAuthenticator.user_key
-- SessionAuthenticator.path_key
-- SessionAuthenticator.rootpath_key
-- SessionAuthenticator.config_prefix
+    [yml]
+    elao_tiny_mce:
+        is_login: false # par défaut personne n'a accès au manager, si true le role est ignoré
+        role: ROLE_ADMIN #le role que doit avoir l'utilisateur pour accedez au media manager
+        path:  /
+        rootpath: %kernel.root_dir%/../web/medias
+        configs:
+            key: value
+
+
+Il faut surement un service pour pour la configuration du service (pour être plus sous au niveau des parametres du manager (qui y a accès, a quel dossier et a quels actions))
+
+Element a configurer par l'application
+
+- path: chemin relatif depuis rootpath vers le dossier qui contient les médias
+- rootpath: chemin absolue vers webdir
+- userKey: contient une clé pour identifié l'utilisateur (utile dans le cas où path contient ${user} car sera remplacer par la clé du user)
+- isLogin: indique si l'utilisateur a accès au media manager
+- configs: un tableau de configuration pour le plugin voir ([http://www.tinymce.com/wiki.php/MCImageManager:Configuration](http://www.tinymce.com/wiki.php/MCImageManager:Configuration)).
+
+Si vous souhaitez configurer encore plus finement le média manager, vous pouvez redéfinir le service `elao.tiny_mce.configuration`

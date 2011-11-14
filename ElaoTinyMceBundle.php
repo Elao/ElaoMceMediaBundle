@@ -1,6 +1,6 @@
 <?php
 
-namespace Elao\ElaoTinyMceBundle;
+namespace Elao\TinyMceBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

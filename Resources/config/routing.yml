@@ -1,0 +1,3 @@
+elao_tinymce_login:
+    pattern: /_tinymce/login
+    defaults: {_controller: ElaoTinyMceBundle:Default:login}
