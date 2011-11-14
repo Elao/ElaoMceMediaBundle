@@ -1,6 +1,6 @@
 <?php
 
-namespace Elao\TinyMce;
+namespace Elao\TinyMceBundle;
 
 use Symfony\Component\Security\Core\SecurityContextInterface;
 

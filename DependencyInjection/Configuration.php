@@ -26,7 +26,7 @@ class Configuration implements ConfigurationInterface
             ->children()
                 ->booleanNode('is_login')->cannotBeEmpty()->defaultValue(false)->end()
                 ->scalarNode('role')->defaultValue('')->end()
-                ->scalarNode('path')->cannotBeEmpty()->defaultValue('/')->end()
+                ->scalarNode('path')->cannotBeEmpty()->defaultValue('%kernel.root_dir%/../web/medias')->end()
                 ->scalarNode('rootpath')->cannotBeEmpty()->defaultValue('%kernel.root_dir%/../web/medias')->end()
                 ->arrayNode('configs')
                     ->useAttributeAsKey('key')

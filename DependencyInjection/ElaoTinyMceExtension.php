@@ -28,7 +28,7 @@ class ElaoTinyMceExtension extends Extension
         $configuration = new Configuration();
 
         $config = $this->processConfiguration($configuration, $configs);
-var_dump($config);die();
+
         $container->setParameter('elao.tiny_mce.configuration.is_login', $config['is_login']);
         $container->setParameter('elao.tiny_mce.configuration.role', $config['role']);
         $container->setParameter('elao.tiny_mce.configuration.rootpath', $config['rootpath']);

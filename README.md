@@ -42,7 +42,7 @@ Todo
     elao_tiny_mce:
         is_login: false # par défaut personne n'a accès au manager, si true le role est ignoré
         role: ROLE_ADMIN #le role que doit avoir l'utilisateur pour accedez au media manager
-        path:  /
+        path:  %kernel.root_dir%/../web/medias
         rootpath: %kernel.root_dir%/../web/medias
         configs:
             key: value
@@ -52,7 +52,7 @@ Il faut surement un service pour pour la configuration du service (pour être pl
 
 Element a configurer par l'application
 
-- path: chemin relatif depuis rootpath vers le dossier qui contient les médias
+- path: chemin de départ au lancement du media manager (le même que rootpath la plupart du temps)
 - rootpath: chemin absolue vers webdir
 - userKey: contient une clé pour identifié l'utilisateur (utile dans le cas où path contient ${user} car sera remplacer par la clé du user)
 - isLogin: indique si l'utilisateur a accès au media manager
