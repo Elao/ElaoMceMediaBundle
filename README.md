@@ -36,9 +36,10 @@ Pour commencer, on doit modifier le fichier /tinymce/plugins/imagemanger/config.
     'SessionAuthenticator.rootpath_key' = 'tiny_rootpathKey'
     'SessionAuthenticator.config_prefix' = 'tiny_config'
 
-Todo
+Configuration au niveau de symfony
 
     [yml]
+    # config.yml
     elao_tiny_mce:
         is_login: false # par défaut personne n'a accès au manager, si true le role est ignoré
         role: ROLE_ADMIN #le role que doit avoir l'utilisateur pour accedez au media manager
@@ -47,6 +48,10 @@ Todo
         configs:
             key: value
 
+    [yml]
+    # routing.yml
+    elao_tiny_mce:
+        resource: @ElaoTinyMceBundle/Resources/config/routing.yml
 
 Il faut surement un service pour pour la configuration du service (pour être plus sous au niveau des parametres du manager (qui y a accès, a quel dossier et a quels actions))
 
