@@ -6,7 +6,7 @@
         <form action="{{ url }}" method="post">
             <input type="hidden" name="key" value="{{ key }}" />
             {% for key, value in configuration.configs %}
-                <input type="hidden" name="{{ key|replace('.', '__') }}" value="{{ value }}" />
+                <input type="hidden" name="{{ key|replace({'.':'__'}) }}" value="{{ value }}" />
             {% endfor %}
         </form>
     </body>
