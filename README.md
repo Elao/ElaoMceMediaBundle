@@ -1,6 +1,6 @@
 # Elao TinyMce Bundle : Description
 
-This bundle handles the integration of **File Manager** and **Image Manager** plugins inside **TinyMCE**
+#### This bundle handles the integration of File Manager and  Image Manager plugins inside TinyMCE
 
 We added as an _extra feature_ an **input of type asset** that is linked to the Image Manager.
 What's that ?
