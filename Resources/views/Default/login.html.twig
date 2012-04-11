@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>Symfony2 ImageManger login</title>
+    </head>
+    <body onload="document.forms[0].submit();">
+        <form action="{{ url }}" method="post">
+            <input type="hidden" name="key" value="{{ key }}" />
+            {% for key, value in configuration.configs %}
+                <input type="hidden" name="{{ key|replace('.', '__') }}" value="{{ value }}" />
+            {% endfor %}
+        </form>
+    </body>
+</html>

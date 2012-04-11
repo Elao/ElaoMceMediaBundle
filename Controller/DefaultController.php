@@ -22,23 +22,12 @@ class DefaultController extends Controller
 
         $configuration = $this->get('elao.tiny_mce.configuration');
 
-        $this->getRequest()->getSession()->start();
-
-        $_SESSION['tiny_isLogin'] = $configuration->getIsLogin();
-        $_SESSION['tiny_userKey'] = $configuration->getUserKey();
-        $_SESSION['tiny_pathKey'] = $configuration->getPath();
-        $_SESSION['tiny_rootpathKey'] = realpath($configuration->getRootPath());
-
-        $_SESSION['tiny_config.general.language'] = $this->getRequest()->getLocale();
-
-        foreach ($configuration->getConfigs() as $key => $config) {
-            $_SESSION['tiny_config.'.$key] = $config;
-        }
-
         if ($configuration->getIsLogin() == false) {
             return new Response('You don\'t have access to this page.');
         }
 
-        return $this->redirect($url);
+        $key = md5(implode('', $configuration->getConfigs()).$configuration->getSecretKey());
+
+        return $this->render('ElaoTinyMceBundle:Default:login.html.twig', array('configuration' => $configuration, 'url' => $url, 'key' => $key));
     }
 }

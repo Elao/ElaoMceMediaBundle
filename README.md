@@ -28,13 +28,9 @@ Configuration disponible au niveau du champ:
 
 Pour commencer, on doit modifier le fichier /tinymce/plugins/imagemanger/config.php ou /tinymce/plugins/filemanger/config.php
 
-    'authenticator.login_page' = /_tinymce/login
-    'authenticator` = 'SessionAuthenticator'
-    'SessionAuthenticator.logged_in_key' = 'tiny_isLogin'
-    'SessionAuthenticator.user_key' = 'tiny_userKey'
-    'SessionAuthenticator.path_key' = 'tiny_pathKey'
-    'SessionAuthenticator.rootpath_key' = 'tiny_rootpathKey'
-    'SessionAuthenticator.config_prefix' = 'tiny_config'
+    'authenticator' = ExternalAuthenticator
+    'ExternalAuthenticator.external_auth_url' = /app_dev.php/_tinymce/login
+    'ExternalAuthenticator.secret_key' = someSecretKey
 
 Configuration au niveau de symfony
 
@@ -43,24 +39,14 @@ Configuration au niveau de symfony
     elao_tiny_mce:
         is_login: false # par défaut personne n'a accès au manager, si true le role est ignoré
         role: ROLE_ADMIN #le role que doit avoir l'utilisateur pour accedez au media manager
-        path:  %kernel.root_dir%/../web/medias
-        rootpath: %kernel.root_dir%/../web/medias
+        secret_key: someSecretKey
         configs:
-            key: value
+            my.key: value
 
     [yml]
     # routing.yml
     elao_tiny_mce:
         resource: @ElaoTinyMceBundle/Resources/config/routing.yml
 
-Il faut surement un service pour pour la configuration du service (pour être plus sous au niveau des parametres du manager (qui y a accès, a quel dossier et a quels actions))
-
 Element a configurer par l'application
-
-- path: chemin de départ au lancement du media manager (le même que rootpath la plupart du temps)
-- rootpath: chemin absolue vers webdir
-- userKey: contient une clé pour identifié l'utilisateur (utile dans le cas où path contient ${user} car sera remplacer par la clé du user)
-- isLogin: indique si l'utilisateur a accès au media manager
 - configs: un tableau de configuration pour le plugin voir ([http://www.tinymce.com/wiki.php/MCImageManager:Configuration](http://www.tinymce.com/wiki.php/MCImageManager:Configuration)).
-
-Si vous souhaitez configurer encore plus finement le média manager, vous pouvez redéfinir le service `elao.tiny_mce.configuration`

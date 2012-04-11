@@ -13,7 +13,7 @@ class Configuration implements ConfigurationInterface
 
     /**
      * Get config tree
-     * 
+     *
      * @return TreeBuilder
      */
     public function getConfigTreeBuilder()
@@ -24,10 +24,9 @@ class Configuration implements ConfigurationInterface
 
         $root
             ->children()
-                ->booleanNode('is_login')->cannotBeEmpty()->defaultValue(false)->end()
+                ->booleanNode('is_login')->defaultValue(false)->end()
                 ->scalarNode('role')->defaultValue('')->end()
-                ->scalarNode('path')->cannotBeEmpty()->defaultValue('%kernel.root_dir%/../web/medias')->end()
-                ->scalarNode('rootpath')->cannotBeEmpty()->defaultValue('%kernel.root_dir%/../web/medias')->end()
+                ->scalarNode('secret_key')->defaultValue('')->end()
                 ->arrayNode('configs')
                     ->useAttributeAsKey('key')
                         ->prototype('scalar')->end()

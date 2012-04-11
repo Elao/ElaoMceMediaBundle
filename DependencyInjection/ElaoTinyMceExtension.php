@@ -31,8 +31,7 @@ class ElaoTinyMceExtension extends Extension
 
         $container->setParameter('elao.tiny_mce.configuration.is_login', $config['is_login']);
         $container->setParameter('elao.tiny_mce.configuration.role', $config['role']);
-        $container->setParameter('elao.tiny_mce.configuration.rootpath', $config['rootpath']);
-        $container->setParameter('elao.tiny_mce.configuration.path', $config['path']);
+        $container->setParameter('elao.tiny_mce.configuration.secret_key', $config['secret_key']);
         $container->setParameter('elao.tiny_mce.configuration.configs', $config['configs']);
 
         $loader = new XmlFileLoader($container, new FileLocator(array(__DIR__.'/../Resources/config/')));

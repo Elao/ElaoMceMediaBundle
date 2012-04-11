@@ -13,8 +13,7 @@
             <argument type="service" id="security.context" />
             <argument>%elao.tiny_mce.configuration.is_login%</argument> <!-- the user is login by default ? -->
             <argument>%elao.tiny_mce.configuration.role%</argument> <!-- the user is granted to use this ? -->
-            <argument>%elao.tiny_mce.configuration.rootpath%</argument> <!-- the rootpath dir -->
-            <argument>%elao.tiny_mce.configuration.path%</argument> <!-- the default path inside rootpath -->
+            <argument>%elao.tiny_mce.configuration.secret_key%</argument> <!-- secret key -->
             <argument>%elao.tiny_mce.configuration.configs%</argument> <!-- custom configuration -->
 
             <call method="init"></call>

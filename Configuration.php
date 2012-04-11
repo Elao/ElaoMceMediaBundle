@@ -15,13 +15,11 @@ class Configuration
 
     protected $userKey;
 
-    protected $rootpath;
-
-    protected $path;
-
     protected $configs;
 
     protected $role;
+
+    protected $secretKey;
 
     /**
      * __construct
@@ -29,21 +27,18 @@ class Configuration
      * @param SecurityContextInterface $context  context
      * @param boolean                  $isLogin  is login ?
      * @param string                   $role     role
-     * @param string                   $rootpath context
-     * @param string                   $path     path
      * @param array                    $configs  configs
      *
      * @return void
      */
-    public function __construct(SecurityContextInterface $context, $isLogin, $role, $rootpath, $path, array $configs = array())
+    public function __construct(SecurityContextInterface $context, $isLogin, $role, $secretKey, array $configs = array())
     {
         $this->context = $context;
 
         $this->isLogin = $isLogin;
-        $this->rootpath = $rootpath;
-        $this->path = $path;
         $this->configs = $configs;
         $this->role = $role;
+        $this->secretKey = $secretKey;
 
         if ($isLogin == false && $role != '') {
             $this->isLogin = $this->context->isGranted($role);
@@ -80,24 +75,9 @@ class Configuration
         return $this->userKey;
     }
 
-    /**
-     * Get Path
-     *
-     * @return string
-     */
-    public function getPath()
+    public function getSecretKey()
     {
-        return $this->path;
-    }
-
-    /**
-     * Get Rootpath
-     *
-     * @return string
-     */
-    public function getRootPath()
-    {
-        return $this->rootpath;
+        return $this->secretKey;
     }
 
     /**
