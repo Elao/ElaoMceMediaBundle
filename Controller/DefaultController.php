@@ -29,7 +29,7 @@ class DefaultController extends Controller
         $_SESSION['tiny_pathKey'] = $configuration->getPath();
         $_SESSION['tiny_rootpathKey'] = realpath($configuration->getRootPath());
 
-        $_SESSION['tiny_config.general.language'] = $this->getRequest()->getSession()->getLocale();
+        $_SESSION['tiny_config.general.language'] = $this->getRequest()->getLocale();
 
         foreach ($configuration->getConfigs() as $key => $config) {
             $_SESSION['tiny_config.'.$key] = $config;
