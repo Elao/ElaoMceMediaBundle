@@ -1,0 +1,36 @@
+{
+    "name":        "elao/mce-media-bundle",
+    "type":        "symfony-bundle",
+    "description": "This bundle handles the integration of File Manager and Image Manager plugins inside TinyMCE",
+    "keywords":    ["elao", "tiny_mce", "media", "bundle"],
+    "homepage":    "http://github.com/Elao/ElaoMceMediaBundle",
+    "license":     "MIT",
+
+    "authors": [
+        {
+            "name": "Benjamin Lévêque",
+            "email": "benjamin@leveque.me"
+        },
+        {
+            "name": "Elao Team",
+            "homepage": "http://www.elao.com"
+        },
+        {
+            "name": "Contributors",
+            "homepage": "http://github.com/Elao/ElaoMceMediaBundle/contributors"
+        }
+    ],
+
+    "require": {
+        "php":                      ">=5.3.2",
+        "symfony/framework-bundle": "2.1.*"
+    },
+
+    "autoload": {
+        "psr-0": {
+            "Elao\\Bundle\\MceMediaBundle": "."
+        }
+    },
+
+    "target-dir": "Elao/Bundle/MceMediaBundle"
+}
