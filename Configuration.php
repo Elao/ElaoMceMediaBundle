@@ -1,6 +1,6 @@
 <?php
 
-namespace Elao\TinyMceBundle;
+namespace Elao\Bundle\MceMediaBundle;
 
 use Symfony\Component\Security\Core\SecurityContextInterface;
 
@@ -12,8 +12,6 @@ class Configuration
     protected $context;
 
     protected $isLogin = false;
-
-    protected $userKey;
 
     protected $configs;
 
@@ -46,16 +44,6 @@ class Configuration
     }
 
     /**
-     * init
-     *
-     * @return void
-     */
-    public function init()
-    {
-        $this->userKey = (string) $this->context->getToken()->getUser()->getUsername();
-    }
-
-    /**
      * Get isLogin
      *
      * @return boolean
@@ -66,15 +54,10 @@ class Configuration
     }
 
     /**
-     * Get UserKey
+     * Get Secret key
      *
      * @return string
      */
-    public function getUserKey()
-    {
-        return $this->userKey;
-    }
-
     public function getSecretKey()
     {
         return $this->secretKey;
@@ -88,35 +71,5 @@ class Configuration
     public function getConfigs()
     {
         return $this->configs;
-    }
-
-    /**
-     * Set config
-     *
-     * @param string $key   key
-     * @param string $value value
-     *
-     * @return void
-     */
-    public function setConfig($key, $value)
-    {
-        $this->configs[$key] = $value;
-    }
-
-    /**
-     * Get config
-     *
-     * @param string      $key     key
-     * @param string|null $default default value
-     *
-     * @return string|null
-     */
-    public function getConfig($key, $default = null)
-    {
-        if (isset($this->configs[$key])) {
-            return $this->configs[$key];
-        } else {
-            return $default;
-        }
     }
 }
