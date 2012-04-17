@@ -25,7 +25,7 @@ Different configurations are available for the field:
 - `delete_image`: The delete icon
 - `delete_label`: The delete label that appears when hovering the delete_image
 - `pick_up_image`: The icon to open the Image Manager plugin
-- `pick_up_label`: The label that is shown when hovering the pick_up_imagel
+- `pick_up_label`: The label that is shown when hovering the pick_up_image
 - `image_size`: The size of the preview image
 
 
