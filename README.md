@@ -20,7 +20,7 @@ Then you just need to transform your text input into an asset input:
         $('myInput').inputAsset();
     </script>
 
-Different Configuration disponible au niveau du champ:
+Different configurations are available for the field:
 
 - `delete_image`: The delete icon
 - `delete_label`: The delete label that appears when hovering the delete_image
