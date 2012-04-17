@@ -1,9 +1,9 @@
 (function($) {
     $.fn.inputAsset = function(options){
         var defaults = {
-            delete_image: '/bundles/elaotinymce/images/input_asset/delete.png',
+            delete_image: '/bundles/elaomcemedia/images/input_asset/delete.png',
             delete_label: 'Delete',
-            pick_up_image: '/bundles/elaotinymce/images/input_asset/pick_up.png',
+            pick_up_image: '/bundles/elaomcemedia/images/input_asset/pick_up.png',
             pick_up_label: 'Pick Up',
             image_size: 150
         };
@@ -37,7 +37,7 @@
                             + '<a href="#" class="asset_btn_delete" title="'+opts.delete_label+'">'
                                 + '<img src="'+opts.delete_image+'" alt="'+opts.delete_label+'"/>'
                             + '</a>'
-                        + '</div>' 
+                        + '</div>'
                         + '<div id="'+id+'_divInput">'
                             + '<input type="text" name="'+name+'" value="'+value+'" id="'+id+'"/>'
                             + '<a href="#" class="asset_btn_add" title="'+opts.pick_up_label+'">'
@@ -47,7 +47,6 @@
                     + '</div>';
 
             $(this).replaceWith(html);
-            
 
             if (value != '') {
                 $('#'+id+'_divPreview').show();
@@ -58,8 +57,8 @@
             }
 
             $('#'+id+'_asset .asset_btn_delete').click(function(){
-                showInput(id)
-                return false; 
+                showInput(id);
+                return false;
             });
 
             $('#'+id+'_asset .asset_btn_add').click(function(){
@@ -68,7 +67,7 @@
                         showPreview(id, data);
                     }
                 });
-                return false; 
+                return false;
             });
 
             $('#' + id + '_preview').load(function(){

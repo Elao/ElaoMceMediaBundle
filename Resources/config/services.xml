@@ -5,16 +5,16 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="elao.tiny_mce.configuration.class">Elao\TinyMceBundle\Configuration</parameter>
+        <parameter key="elao_mce_media.configuration.class">Elao\Bundle\MceMediaBundle\Configuration</parameter>
     </parameters>
 
     <services>
-        <service id="elao.tiny_mce.configuration" class="%elao.tiny_mce.configuration.class%" scope="request">
+        <service id="elao_mce_media.configuration" class="%elao_mce_media.configuration.class%" scope="request">
             <argument type="service" id="security.context" />
-            <argument>%elao.tiny_mce.configuration.is_login%</argument> <!-- the user is login by default ? -->
-            <argument>%elao.tiny_mce.configuration.role%</argument> <!-- the user is granted to use this ? -->
-            <argument>%elao.tiny_mce.configuration.secret_key%</argument> <!-- secret key -->
-            <argument>%elao.tiny_mce.configuration.configs%</argument> <!-- custom configuration -->
+            <argument>%elao_mce_media.configuration.is_login%</argument> <!-- the user is login by default ? -->
+            <argument>%elao_mce_media.configuration.role%</argument> <!-- the user is granted to use this ? -->
+            <argument>%elao_mce_media.configuration.secret_key%</argument> <!-- secret key -->
+            <argument>%elao_mce_media.configuration.configs%</argument> <!-- custom configuration -->
 
             <call method="init"></call>
         </service>

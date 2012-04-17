@@ -1,6 +1,6 @@
 <?php
 
-namespace Elao\TinyMceBundle\Validator\Constraints;
+namespace Elao\Bundle\MceMediaBundle\Validator\Constraints;
 
 use Symfony\Component\Validator\Constraint;
 

@@ -1,12 +1,12 @@
 <?php
 
-namespace Elao\TinyMceBundle\DependencyInjection;
+namespace Elao\Bundle\MceMediaBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 /**
- * Configuration for ElaoTinyMceBundle
+ * Configuration for ElaoMceMediaBundle
  */
 class Configuration implements ConfigurationInterface
 {
@@ -20,7 +20,7 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder();
 
-        $root = $treeBuilder->root('elao_tiny_mce');
+        $root = $treeBuilder->root('elao_mce_media');
 
         $root
             ->children()

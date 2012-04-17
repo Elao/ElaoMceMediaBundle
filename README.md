@@ -1,4 +1,4 @@
-# Elao TinyMce Bundle : Description
+# Elao MceMedia Bundle : Description
 
 #### This bundle handles the integration of File Manager and  Image Manager plugins inside TinyMCE
 
@@ -12,7 +12,7 @@ Once the form is saved, it stores the image path.
 
 # How to use the asset field ?
 
-First, you must include the js file `/bundles/elaotinymce/js/input_asset.js`, the TinyMCE script, and the file `tiny_mce/plugins/imagemanager/`
+First, you must include the js file `/bundles/elaomcemedia/js/input_asset.js`, the TinyMCE script, and the file `tiny_mce/plugins/imagemanager/`
 
 Then you just need to transform your text input into an asset input:
 
@@ -33,7 +33,6 @@ Different configurations are available for the field:
 
 We need to modify the file `/tinymce/plugins/imagemanger/config.php` or/and `/tinymce/plugins/filemanger/config.php `
 
-
     'authenticator' = ExternalAuthenticator
     'ExternalAuthenticator.external_auth_url' = /_tinymce/login
     'ExternalAuthenticator.secret_key' = someSecretKey
@@ -42,7 +41,7 @@ Configuration under Symfony
 
     [yml]
     # config.yml
-    elao_tiny_mce:
+    elao_mce_media:
         is_login: false # Default nobody has access to the manager, but if true, the role is ignored
         role: ROLE_ADMIN # The role that the user must have in order to access to the manager
         secret_key: someSecretKey
@@ -51,8 +50,8 @@ Configuration under Symfony
 
     [yml]
     # routing.yml
-    elao_tiny_mce:
-        resource: @ElaoTinyMceBundle/Resources/config/routing.yml
+    elao_mce_media:
+        resource: @ElaoMceMediaBundle/Resources/config/routing.yml
 
 Things to configure with the application
 - configs: an array of config keys for the plugins ([http://www.tinymce.com/wiki.php/MCImageManager:Configuration](http://www.tinymce.com/wiki.php/MCImageManager:Configuration)).
