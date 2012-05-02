@@ -15,8 +15,6 @@
             <argument>%elao_mce_media.configuration.role%</argument> <!-- the user is granted to use this ? -->
             <argument>%elao_mce_media.configuration.secret_key%</argument> <!-- secret key -->
             <argument>%elao_mce_media.configuration.configs%</argument> <!-- custom configuration -->
-
-            <call method="init"></call>
         </service>
     </services>
 
