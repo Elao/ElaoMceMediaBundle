@@ -9,6 +9,33 @@ It adds next to the text input, an extra button to upload any image to the Image
 
 Once the form is saved, it stores the image path.
 
+# Download & Install
+
+Via composer:
+
+    // composer.json
+    {
+        // ...
+        "require": {
+            // ...
+            "elao/mce-media-bundle": "dev-master"
+        }
+    }
+
+Update your composer.phar:
+
+    $ php composer.phar update
+
+Include it in your Kernel class:
+
+    // app/AppKernel.php
+    public function registerBundles()
+    {
+        $bundles = array(
+            new Elao\Bundle\MceMediaBundle\ElaoMceMediaBundle(),
+            ...
+        );
+    }
 
 # How to use the asset field ?
 
