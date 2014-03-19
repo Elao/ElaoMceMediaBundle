@@ -6,15 +6,19 @@
 
     <parameters>
         <parameter key="elao_mce_media.configuration.class">Elao\Bundle\MceMediaBundle\Configuration</parameter>
+        <parameter key="elao_mce_media.configuration.parameters.is_login">boolean</parameter>
+        <parameter key="elao_mce_media.configuration.parameters.role">boolean</parameter>
+        <parameter key="elao_mce_media.configuration.parameters.secret_key">boolean</parameter>
+        <parameter key="elao_mce_media.configuration.parameters.configs">boolean</parameter>
     </parameters>
 
     <services>
         <service id="elao_mce_media.configuration" class="%elao_mce_media.configuration.class%" scope="request">
             <argument type="service" id="security.context" />
-            <argument>%elao_mce_media.configuration.is_login%</argument> <!-- the user is login by default ? -->
-            <argument>%elao_mce_media.configuration.role%</argument> <!-- the user is granted to use this ? -->
-            <argument>%elao_mce_media.configuration.secret_key%</argument> <!-- secret key -->
-            <argument>%elao_mce_media.configuration.configs%</argument> <!-- custom configuration -->
+            <argument>%elao_mce_media.configuration.parameters.is_login%</argument> <!-- the user is login by default ? -->
+            <argument>%elao_mce_media.configuration.parameters.role%</argument> <!-- the user is granted to use this ? -->
+            <argument>%elao_mce_media.configuration.parameters.secret_key%</argument> <!-- secret key -->
+            <argument>%elao_mce_media.configuration.parameters.configs%</argument> <!-- custom configuration -->
         </service>
     </services>
 

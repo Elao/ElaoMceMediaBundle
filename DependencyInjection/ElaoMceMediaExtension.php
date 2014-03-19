@@ -29,10 +29,10 @@ class ElaoMceMediaExtension extends Extension
 
         $config = $this->processConfiguration($configuration, $configs);
 
-        $container->setParameter('elao_mce_media.configuration.is_login', $config['is_login']);
-        $container->setParameter('elao_mce_media.configuration.role', $config['role']);
-        $container->setParameter('elao_mce_media.configuration.secret_key', $config['secret_key']);
-        $container->setParameter('elao_mce_media.configuration.configs', $config['configs']);
+        $container->setParameter('elao_mce_media.configuration.parameters.is_login', $config['is_login']);
+        $container->setParameter('elao_mce_media.configuration.parameters.role', $config['role']);
+        $container->setParameter('elao_mce_media.configuration.parameters.secret_key', $config['secret_key']);
+        $container->setParameter('elao_mce_media.configuration.parameters.configs', $config['configs']);
 
         $loader = new XmlFileLoader($container, new FileLocator(array(__DIR__.'/../Resources/config/')));
         $loader->load('services.xml');

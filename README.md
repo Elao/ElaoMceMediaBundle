@@ -1,4 +1,4 @@
-# Elao MceMedia Bundle : Description
+# Elao MceMedia Bundle
 
 #### This bundle handles the integration of File Manager and  Image Manager plugins inside TinyMCE
 
@@ -9,7 +9,13 @@ It adds next to the text input, an extra button to upload any image to the Image
 
 Once the form is saved, it stores the image path.
 
-# Download & Install
+## Changelog
+
+* 1.1.0
+	* Rename configuration parameters from **elao_mce_media.configuration.[…]** to **elao_mce_media.configuration.parameters.[…]**
+
+
+## Download & Install
 
 Via composer:
 
@@ -18,7 +24,7 @@ Via composer:
         // ...
         "require": {
             // ...
-            "elao/mce-media-bundle": "1.0.*"
+            "elao/mce-media-bundle": "1.1.*"
         }
     }
 
@@ -37,7 +43,7 @@ Include it in your Kernel class:
         );
     }
 
-# How to use the asset field ?
+## How to use the asset field ?
 
 First, you must include the js file `/bundles/elaomcemedia/js/input_asset.js`, the TinyMCE script, and the file `tiny_mce/plugins/imagemanager/`
 
@@ -56,7 +62,7 @@ Different configurations are available for the field:
 - `image_size`: The size of the preview image
 
 
-# Authenticator for Image Manager & File Manager
+## Authenticator for Image Manager & File Manager
 
 We need to modify the file `/tinymce/plugins/imagemanger/config.php` or/and `/tinymce/plugins/filemanger/config.php `
 
