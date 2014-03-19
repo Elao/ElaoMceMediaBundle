@@ -18,7 +18,7 @@ Via composer:
         // ...
         "require": {
             // ...
-            "elao/mce-media-bundle": "dev-master"
+            "elao/mce-media-bundle": "1.0.*"
         }
     }
 
